@@ -1,3 +1,7 @@
+To make your webpage fully web-compatible on GitHub, the local `file:///C:/Users/...` paths need to be swapped out with raw URLs or relative paths.
+
+Below is your fully updated code. Note that for GitHub `.mp3` and `.mp4` links, the standard `github.com/.../blob/...` URLs have been converted to **`raw.githubusercontent.com`** links so the media elements can fetch and stream properly.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -219,7 +223,6 @@
     100% { opacity: 1; transform: scale(1.25); }
   }
 
-  /* Palette Switcher Dropdown */
   .palette-dropdown {
     background: #000;
     border: 2px solid var(--crt-primary);
@@ -241,7 +244,6 @@
     color: #fff;
   }
 
-  /* Overrides Drawer */
   .overrides-drawer {
     display: none;
     background: #000;
@@ -277,7 +279,6 @@
     text-shadow: 0 0 6px #ffffff;
   }
 
-  /* Grid Columns */
   .grid-layout {
     display: grid;
     grid-template-columns: minmax(0, 310px) minmax(0, 1.4fr) minmax(0, 390px);
@@ -318,7 +319,6 @@
     text-shadow: 0 0 6px #ffffff, 0 0 12px var(--crt-glow);
   }
 
-  /* Holo Screen without Discoloration */
   .holo-screen {
     width: 100%;
     height: 250px;
@@ -339,7 +339,6 @@
     filter: none;
   }
 
-  /* 3-Way Analog Rocker Switch Unit */
   .analog-switch-unit {
     width: 100%;
     margin-top: -6px;
@@ -399,7 +398,6 @@
     background: var(--crt-primary);
   }
 
-  /* Dynamic Abilities Panel */
   .ability-item {
     display: flex;
     gap: 10px;
@@ -476,7 +474,6 @@
     color: #fff;
   }
 
-  /* Combined Harm Table & Recovery Bar Header */
   .harm-table {
     width: 100%;
     border-collapse: collapse;
@@ -587,7 +584,6 @@
     line-height: 1.2;
   }
 
-  /* Interactive Elements */
   .pip {
     background: var(--pip-empty);
     border: 2px solid var(--crt-primary);
@@ -619,7 +615,6 @@
     min-width: 16px;
   }
 
-  /* Attributes & Actions */
   .attr-group {
     margin-bottom: 12px;
   }
@@ -817,7 +812,6 @@
     gap: 4px;
   }
 
-  /* High-Detail ASCII Skull */
   .ascii-skull {
     display: none;
     font-family: "Courier New", Courier, monospace;
@@ -843,7 +837,6 @@
     100% { filter: brightness(1.2) drop-shadow(0 0 6px #fff); opacity: 0.95; }
   }
 
-  /* Elongated Items & Load Block */
   .load-select-bar {
     display: flex;
     justify-content: space-between;
@@ -1017,12 +1010,12 @@
 <body onclick="initAudio()">
 
 <video id="bg-video" autoplay loop muted playsinline>
-  <source src="file:///C:/Users/izsak/Videos/red.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/geroprojekt/karilap/main/assets/red.mp4" type="video/mp4">
 </video>
 
-<audio id="snd-click" src="file:///C:/Users/izsak/Videos/star_wars_click.mp3" preload="auto"></audio>
-<audio id="snd-close" src="file:///C:/Users/izsak/Videos/star_wars_close.mp3" preload="auto"></audio>
-<audio id="snd-startup" src="file:///C:/Users/izsak/Videos/star_wars_startup.mp3" preload="auto"></audio>
+<audio id="snd-click" src="https://raw.githubusercontent.com/geroprojekt/karilap/main/assets/star_wars_click.mp3" preload="auto"></audio>
+<audio id="snd-close" src="https://raw.githubusercontent.com/geroprojekt/karilap/main/assets/star_wars_close.mp3" preload="auto"></audio>
+<audio id="snd-startup" src="https://raw.githubusercontent.com/geroprojekt/karilap/main/assets/star_wars_startup.mp3" preload="auto"></audio>
 
 <div class="crt-monitor">
   <div class="header-bar">
@@ -1037,7 +1030,6 @@
     </div>
 
     <div style="display: flex; gap: 10px; align-items: center; font-size: 13px; flex-wrap: wrap;">
-      <!-- PALETTE SELECTOR DROPDOWN -->
       <select id="palette-selector" class="palette-dropdown" onchange="changeTheme(this.value)">
         <option value="crimson">PALETTE: CRIMSON</option>
         <option value="amber">PALETTE: AMBER</option>
@@ -1054,7 +1046,6 @@
     </div>
   </div>
 
-  <!-- COLLAPSIBLE SYS OVERRIDES DRAWER -->
   <div id="overrides-drawer" class="overrides-drawer">
     <div style="font-weight: 900; letter-spacing: 2px; color: #ffffff; text-shadow: 0 0 6px #ffffff; border-bottom: 1px dashed var(--crt-primary); padding-bottom: 4px;">
       // CAMPAIGN RULES &amp; CREW MODIFIERS OVERRIDE MATRIX
@@ -1084,11 +1075,9 @@
   </div>
 
   <div class="grid-layout">
-    <!-- LEFT COLUMN -->
     <div class="col">
-      <!-- HOLO SCREEN WITH 3-WAY ANALOG SWITCH MOUNTED UNDERNEATH -->
       <div class="holo-screen">
-        <img id="char-portrait-img" src="file:///C:/Users/izsak/Videos/starwars_karakter1.gif" alt="Character Portrait">
+        <img id="char-portrait-img" src="https://raw.githubusercontent.com/geroprojekt/karilap/refs/heads/main/assets/output.webp" alt="Character Portrait">
       </div>
       <div class="analog-switch-unit" onclick="cyclePortraitSwitch()">
         <span class="analog-switch-label">PORTRAIT:</span>
@@ -1164,9 +1153,7 @@
       </div>
     </div>
 
-    <!-- CENTER COLUMN: ABILITIES, HARM & ITEMS ELONGATED STACK -->
     <div class="col">
-      <!-- UNIFIED ABILITIES PANEL -->
       <div class="panel">
         <div class="panel-title">
           <span>ABILITIES</span>
@@ -1175,7 +1162,7 @@
 
         <div class="ability-item starting-ability">
           <div style="flex-grow: 1;">
-            <strong>TOTAL DEDICATION:</strong> When you roll a <strong>desperate action</strong>, you get <strong>+1d</strong> to your roll if you also take <strong>-1d</strong> to any resistance rolls against consequences from your action[cite: 1].
+            <strong>TOTAL DEDICATION:</strong> When you roll a <strong>desperate action</strong>, you get <strong>+1d</strong> to your roll if you also take <strong>-1d</strong> to any resistance rolls against consequences from your action.
           </div>
         </div>
 
@@ -1189,7 +1176,6 @@
         </div>
       </div>
 
-      <!-- HARM & RECOVERY PANEL -->
       <div class="panel">
         <div class="panel-title"><span>HARM &amp; RECOVERY</span></div>
         
@@ -1245,14 +1231,12 @@
         </table>
       </div>
 
-      <!-- ELONGATED ITEMS & LOAD PANEL -->
       <div class="panel">
         <div class="panel-title">
           <span>ITEMS &amp; LOAD</span>
           <span id="load-counter-display" style="font-size:11.5px; font-weight:900; color:#ffffff; text-shadow:0 0 4px #ffffff;">[LOAD: 0 / 3]</span>
         </div>
 
-        <!-- ARMOR USAGE TRACK -->
         <div style="display: flex; gap: 14px; margin-bottom: 8px; font-size: 12px; font-weight: 900; border-bottom: 1.5px dashed var(--crt-dim); padding-bottom: 6px; flex-wrap: wrap;">
           <div style="display: inline-flex; align-items: center; gap: 4px;">
             <span class="check-box" onclick="toggleBox(this)" style="width: 14px; height: 14px;"></span>
@@ -1272,7 +1256,6 @@
           </div>
         </div>
 
-        <!-- Dynamic Load Tier Selector -->
         <div class="load-select-bar">
           <div class="load-option" onclick="setLoadCapacity('light')">
             <span class="check-box active" id="load-box-light"></span> <span id="load-label-light">3 light</span>
@@ -1285,9 +1268,7 @@
           </div>
         </div>
 
-        <!-- Two-Column Side-by-Side Inventory Display -->
         <div class="items-dual-grid" id="items-list-container">
-          <!-- Column 1: Mechanic Specific Items -->
           <div class="items-column">
             <div class="item-category-header">MECHANIC ITEMS (ITALICS: 0 LOAD)</div>
 
@@ -1326,7 +1307,6 @@
             </div>
           </div>
 
-          <!-- Column 2: Standard Items -->
           <div class="items-column">
             <div class="item-category-header">STANDARD ITEMS</div>
 
@@ -1415,12 +1395,10 @@
       </div>
     </div>
 
-    <!-- RIGHT COLUMN -->
     <div class="col">
       <div class="panel">
         <div class="panel-title"><span>ACTIONS &amp; ATTRIBUTES</span></div>
 
-        <!-- INSIGHT GROUP -->
         <div class="attr-group">
           <div class="attr-header">
             <span class="attr-title">INSIGHT</span>
@@ -1477,7 +1455,6 @@
           </div>
         </div>
 
-        <!-- PROWESS GROUP -->
         <div class="attr-group">
           <div class="attr-header">
             <span class="attr-title">PROWESS</span>
@@ -1534,7 +1511,6 @@
           </div>
         </div>
 
-        <!-- RESOLVE GROUP -->
         <div class="attr-group" style="margin-bottom: 0;">
           <div class="attr-header">
             <span class="attr-title">RESOLVE</span>
@@ -1592,7 +1568,6 @@
         </div>
       </div>
 
-      <!-- STRESS & TRAUMA -->
       <div class="panel">
         <div class="panel-title">
           <div style="display: flex; align-items: center; gap: 8px;">
@@ -1623,7 +1598,6 @@
         </div>
       </div>
 
-      <!-- PLAYBOOK ADVANCEMENT -->
       <div class="panel">
         <div class="panel-title">
           <span>PLAYBOOK ADVANCEMENT</span>
@@ -1632,8 +1606,8 @@
           </div>
         </div>
         <div style="font-size:12.5px; font-weight:bold; color: #ffffff; text-shadow:0 0 2px rgba(255,255,255,0.4); line-height:1.45;">
-          • Every time you roll a desperate action, mark xp in that action's attribute[cite: 1].<br>
-          • Addressed tough challenge with technical skill/ingenuity • Expressed beliefs, drives, heritage, or background • Struggled with vice or traumas[cite: 1].
+          • Every time you roll a desperate action, mark xp in that action's attribute.<br>
+          • Addressed tough challenge with technical skill/ingenuity • Expressed beliefs, drives, heritage, or background • Struggled with vice or traumas.
         </div>
       </div>
     </div>
@@ -1646,9 +1620,9 @@
   let currentPortraitIndex = 0;
 
   const PORTRAIT_SOURCES = [
-    { name: "GIF 1", src: "file:///C:/Users/izsak/Videos/starwars_karakter1.gif" },
-    { name: "GIF 2", src: "file:///C:/Users/izsak/Videos/starwars_karakter.gif" },
-    { name: "STILL", src: "file:///C:/Users/izsak/Videos/starwarskarika.png" }
+    { name: "WEBPP 1", src: "https://raw.githubusercontent.com/geroprojekt/karilap/refs/heads/main/assets/output.webp" },
+    { name: "WEBPP 2", src: "https://raw.githubusercontent.com/geroprojekt/karilap/refs/heads/main/assets/output1.webp" },
+    { name: "STILL", src: "https://raw.githubusercontent.com/geroprojekt/karilap/refs/heads/main/assets/starwarskarika.png" }
   ];
 
   const activeModifiers = {
@@ -1832,7 +1806,6 @@
     playAudio('close');
   }
 
-  /* Load Capacity Management with Modifiers */
   let currentLoadTier = 'light';
   let currentUsedLoad = 0;
 
@@ -1925,7 +1898,6 @@
     playAudio(wasActive ? 'close' : 'click');
   }
 
-  /* Trauma and ASCII Skull Tracking with Strict Capacity Lock */
   function toggleTrauma(el) {
     const maxTrauma = activeModifiers.driven ? 5 : 4;
     const isCurrentlyActive = el.classList.contains('active');
