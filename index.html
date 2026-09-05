@@ -1,8 +1,3 @@
-To make your webpage fully web-compatible on GitHub, the local `file:///C:/Users/...` paths need to be swapped out with raw URLs or relative paths.
-
-Below is your fully updated code. Note that for GitHub `.mp3` and `.mp4` links, the standard `github.com/.../blob/...` URLs have been converted to **`raw.githubusercontent.com`** links so the media elements can fetch and stream properly.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1077,7 +1072,7 @@ Below is your fully updated code. Note that for GitHub `.mp3` and `.mp4` links, 
   <div class="grid-layout">
     <div class="col">
       <div class="holo-screen">
-        <img id="char-portrait-img" src="https://raw.githubusercontent.com/geroprojekt/karilap/refs/heads/main/assets/output.webp" alt="Character Portrait">
+        <<img id="char-portrait-img" src="assets/output.webp" alt="Character Portrait">
       </div>
       <div class="analog-switch-unit" onclick="cyclePortraitSwitch()">
         <span class="analog-switch-label">PORTRAIT:</span>
@@ -2077,5 +2072,3 @@ Below is your fully updated code. Note that for GitHub `.mp3` and `.mp4` links, 
 </script>
 </body>
 </html>
-
-```
